@@ -3,39 +3,19 @@
 namespace PHPAsaas\Infra\Customer;
 
 use GuzzleHttp\Client;
+use GuzzleRepository;
 use PHPAsaas\Domain\Customer\CustomerRepositoryInterface;
 use PHPAsaas\Domain\Customer\Dto\CreateCustomerDto;
 use PHPAsaas\Domain\Customer\Dto\UpdateCustomerDto;
 
-class GuzzleCustomerRepository implements CustomerRepositoryInterface
+class GuzzleCustomerRepository extends GuzzleRepository implements CustomerRepositoryInterface
 {
-    private string $baseUri;
-    private array  $headers;
-
     public function __construct(
-        private Client $client,
-        private string $accessToken,
-        private bool   $sandbox = true
+        Client $client,
+        string $accessToken,
+        bool   $sandbox = true
     ) {
-        $this->defineBaseUri();
-        $this->defineDefaultHeaders();
-    }
-
-    private function defineBaseUri()
-    {
-        $this->baseUri = match ($this->sandbox) {
-            true  => 'https://sandbox.asaas.com/api/v3/customers',
-            false => 'https://api.asaas.com/api/v3/customers'
-        };
-    }
-
-    private function defineDefaultHeaders()
-    {
-        $this->headers = [
-            'accept'       => 'application/json',
-            'content-type' => 'application/json',
-            'access_token' => $this->accessToken
-        ];
+        parent::__construct($client, $accessToken, $sandbox);
     }
 
     public function createCustomer(CreateCustomerDto $createCustomerDto)
