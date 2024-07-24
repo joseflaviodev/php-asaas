@@ -2,8 +2,8 @@
 
 namespace PHPAsaas\Customer\UseCase;
 
-use PHPAsaas\Customer\CustomerRepositoryInterface;
-use PHPAsaas\Customer\Dto\CreateCustomerDto;
+use PHPAsaas\Domain\Customer\CustomerRepositoryInterface;
+use PHPAsaas\Domain\Customer\Dto\CreateCustomerDto;
 
 class CreateCustomer
 {

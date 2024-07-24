@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPAsaas\Customer\Dto;
+namespace PHPAsaas\Domain\Customer\Dto;
 
 class CreateCustomerDto
 {

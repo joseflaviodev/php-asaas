@@ -1,9 +1,9 @@
 <?php
 
-namespace PHPAsaas\Customer;
+namespace PHPAsaas\Domain\Customer;
 
-use PHPAsaas\Customer\Dto\CreateCustomerDto;
-use PHPAsaas\Customer\Dto\UpdateCustomerDto;
+use PHPAsaas\Domain\Customer\Dto\CreateCustomerDto;
+use PHPAsaas\Domain\Customer\Dto\UpdateCustomerDto;
 
 interface CustomerRepositoryInterface
 {

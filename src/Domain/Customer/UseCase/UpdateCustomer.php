@@ -1,9 +1,9 @@
 <?php
 
-namespace PHPAsaas\Customer\UseCase;
+namespace PHPAsaas\Domain\Customer\UseCase;
 
-use PHPAsaas\Customer\CustomerRepositoryInterface;
-use PHPAsaas\Customer\Dto\UpdateCustomerDto;
+use PHPAsaas\Domain\Customer\CustomerRepositoryInterface;
+use PHPAsaas\Domain\Customer\Dto\UpdateCustomerDto;
 
 class UpdateCustomer
 {
