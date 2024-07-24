@@ -9,4 +9,5 @@ interface CustomerRepositoryInterface
 {
     public function createCustomer(CreateCustomerDto $createCustomerDto);
     public function updateCustomer(UpdateCustomerDto $updateCustomerDto);
+    public function findById(string $id);
 }
