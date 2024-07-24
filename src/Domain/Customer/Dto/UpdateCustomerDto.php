@@ -2,7 +2,9 @@
 
 namespace PHPAsaas\Domain\Customer\Dto;
 
-class UpdateCustomerDto
+use JsonSerializable;
+
+class UpdateCustomerDto implements JsonSerializable
 {
     public function __construct(
         public readonly  string $id,
@@ -25,5 +27,13 @@ class UpdateCustomerDto
         public readonly ?string $groupName,
         public readonly ?string $company
     ) {
+    }
+
+    public function jsonSerialize(): array
+    {
+        return array_filter(
+            array: get_object_vars($this),
+            callback: fn ($value) => $value !== null
+        );
     }
 }
