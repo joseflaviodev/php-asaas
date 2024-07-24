@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPAsaas\Customer\UseCase;
+namespace PHPAsaas\Domain\Customer\UseCase;
 
 use PHPAsaas\Domain\Customer\CustomerRepositoryInterface;
 use PHPAsaas\Domain\Customer\Dto\CreateCustomerDto;
