@@ -12,6 +12,12 @@ class UpdateCustomer
     ) {
     }
 
+    public function withAccessToken(string $accessToken): UpdateCustomer
+    {
+        $this->customerRepository = $this->customerRepository->withAccessToken($accessToken);
+        return $this;
+    }
+
     public function execute(UpdateCustomerDto $updateCustomerDto)
     {
         $this->customerRepository->updateCustomer($updateCustomerDto);

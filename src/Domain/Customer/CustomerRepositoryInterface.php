@@ -7,6 +7,7 @@ use PHPAsaas\Domain\Customer\Dto\UpdateCustomerDto;
 
 interface CustomerRepositoryInterface
 {
+    public function withAccessToken(string $accessToken): CustomerRepositoryInterface;
     public function createCustomer(CreateCustomerDto $createCustomerDto);
     public function updateCustomer(UpdateCustomerDto $updateCustomerDto);
 }

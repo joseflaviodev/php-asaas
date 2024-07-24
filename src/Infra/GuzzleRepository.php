@@ -12,11 +12,11 @@ abstract class GuzzleRepository
         protected string $accessToken,
         protected bool   $sandbox
     ) {
-        $this->defineBaseUri();
-        $this->defineDefaultHeaders();
+        $this->setBaseUri();
+        $this->setDefaultHeaders();
     }
 
-    protected function defineBaseUri()
+    protected function setBaseUri()
     {
         $this->baseUri = match ($this->sandbox) {
             true  => 'https://sandbox.asaas.com/api/v3/customers',
@@ -24,7 +24,7 @@ abstract class GuzzleRepository
         };
     }
 
-    protected function defineDefaultHeaders()
+    protected function setDefaultHeaders()
     {
         $this->headers = [
             'accept'       => 'application/json',

@@ -12,6 +12,12 @@ class CreateCustomer
     ) {
     }
 
+    public function withAccessToken(string $accessToken): CreateCustomer
+    {
+        $this->customerRepository = $this->customerRepository->withAccessToken($accessToken);
+        return $this;
+    }
+
     public function execute(CreateCustomerDto $createCustomerDto)
     {
         $this->customerRepository->createCustomer($createCustomerDto);

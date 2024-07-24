@@ -18,6 +18,13 @@ class GuzzleCustomerRepository extends GuzzleRepository implements CustomerRepos
         parent::__construct($client, $accessToken, $sandbox);
     }
 
+    public function withAccessToken(string $accessToken): GuzzleCustomerRepository
+    {
+        $this->accessToken = $accessToken;
+        $this->setDefaultHeaders();
+        return $this;
+    }
+
     public function createCustomer(CreateCustomerDto $createCustomerDto)
     {
         $this->client->request('POST', $this->baseUri, [
