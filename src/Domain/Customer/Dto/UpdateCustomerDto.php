@@ -7,25 +7,25 @@ use JsonSerializable;
 class UpdateCustomerDto implements JsonSerializable
 {
     public function __construct(
-        public readonly  string $id,
-        public readonly ?string $name,
-        public readonly ?string $cpfCnpj,
-        public readonly ?string $email,
-        public readonly ?string $phone,
-        public readonly ?string $mobilePhone,
-        public readonly ?string $address,
-        public readonly ?string $addressNumber,
-        public readonly ?string $complement,
-        public readonly ?string $province,
-        public readonly ?string $postalCode,
-        public readonly ?string $externalReference,
-        public readonly ?bool   $notificationDisabled,
-        public readonly ?array  $additionalEmails,
-        public readonly ?string $municipalInscription,
-        public readonly ?string $stateInscription,
-        public readonly ?string $observations,
-        public readonly ?string $groupName,
-        public readonly ?string $company
+        public  string $id,
+        public ?string $name,
+        public ?string $cpfCnpj,
+        public ?string $email,
+        public ?string $phone,
+        public ?string $mobilePhone,
+        public ?string $address,
+        public ?string $addressNumber,
+        public ?string $complement,
+        public ?string $province,
+        public ?string $postalCode,
+        public ?string $externalReference,
+        public ?bool   $notificationDisabled,
+        public ?array  $additionalEmails,
+        public ?string $municipalInscription,
+        public ?string $stateInscription,
+        public ?string $observations,
+        public ?string $groupName,
+        public ?string $company
     ) {
     }
 

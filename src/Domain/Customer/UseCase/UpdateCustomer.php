@@ -3,6 +3,7 @@
 namespace PHPAsaas\Domain\Customer\UseCase;
 
 use PHPAsaas\Domain\Customer\CustomerRepositoryInterface;
+use PHPAsaas\Domain\Customer\Dto\ResponseCustomerDto;
 use PHPAsaas\Domain\Customer\Dto\UpdateCustomerDto;
 
 class UpdateCustomer
@@ -12,8 +13,8 @@ class UpdateCustomer
     ) {
     }
 
-    public function execute(UpdateCustomerDto $updateCustomerDto)
+    public function execute(UpdateCustomerDto $updateCustomerDto): ResponseCustomerDto
     {
-        $this->customerRepository->updateCustomer($updateCustomerDto);
+        return $this->customerRepository->updateCustomer($updateCustomerDto);
     }
 }

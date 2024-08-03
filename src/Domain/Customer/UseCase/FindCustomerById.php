@@ -3,6 +3,7 @@
 namespace PHPAsaas\Domain\Customer\UseCase;
 
 use PHPAsaas\Domain\Customer\CustomerRepositoryInterface;
+use PHPAsaas\Domain\Customer\Dto\ResponseCustomerDto;
 
 class FindCustomerById
 {
@@ -11,8 +12,8 @@ class FindCustomerById
     ) {
     }
 
-    public function execute(string $id)
+    public function execute(string $id): ?ResponseCustomerDto
     {
-        $this->customerRepository->findById($id);
+        return $this->customerRepository->findById($id);
     }
 }

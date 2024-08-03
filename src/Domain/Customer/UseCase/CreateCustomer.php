@@ -4,6 +4,7 @@ namespace PHPAsaas\Domain\Customer\UseCase;
 
 use PHPAsaas\Domain\Customer\CustomerRepositoryInterface;
 use PHPAsaas\Domain\Customer\Dto\CreateCustomerDto;
+use PHPAsaas\Domain\Customer\Dto\ResponseCustomerDto;
 
 class CreateCustomer
 {
@@ -12,8 +13,8 @@ class CreateCustomer
     ) {
     }
 
-    public function execute(CreateCustomerDto $createCustomerDto)
+    public function execute(CreateCustomerDto $createCustomerDto): ResponseCustomerDto
     {
-        $this->customerRepository->createCustomer($createCustomerDto);
+        return $this->customerRepository->createCustomer($createCustomerDto);
     }
 }
